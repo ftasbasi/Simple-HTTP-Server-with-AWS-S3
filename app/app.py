@@ -64,13 +64,13 @@ class requestHandler(BaseHTTPRequestHandler):
         try:
             if self.path.endswith('/picus/list'):
                 output_dict = s3.list_objects(Bucket='picusfurkan')
-                self.send_response(200)
+                self.send_response(202)
                 self.send_header('Content-Type', 'text/html')
                 self.end_headers()
                 self.wfile.write(json.dumps(output_dict, cls=DatetimeEncoder).encode('utf-8'))
             elif self.path.count('/picus/list/'):
                 key = self.path.split("/")[-1]
-                self.send_response(200)
+                self.send_response(202)
                 self.send_header('Content-Type', 'text/html')
                 self.end_headers()
                 self.wfile.write(read_obj(key).encode('utf-8'))
@@ -83,7 +83,7 @@ class requestHandler(BaseHTTPRequestHandler):
         try:
             if self.path.endswith('/picus/put'):
                 content = json.loads(self.rfile.read(int(self.headers['Content-Length'])).decode("UTF-8"))
-                self.send_response(200)
+                self.send_response(202)
                 self.send_header("Content-type", "text/html")
                 self.end_headers()
                 self.wfile.write(send_JSON(content).encode('utf-8'))
@@ -94,10 +94,11 @@ class requestHandler(BaseHTTPRequestHandler):
 
 
 def main():
-    PORT = 8000
-    server_address = ('localhost', PORT)
+    PORT = 5000
+    server_address = ("0.0.0.0", PORT)
     server = HTTPServer(server_address, requestHandler)
     server.allow_reuse_address = True
+    print("RUNNING...")
     try:
         server.serve_forever()
     except Exception as inst:
