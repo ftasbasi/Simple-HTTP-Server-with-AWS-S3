@@ -6,8 +6,8 @@ import boto3
 
 s3 = boto3.client("s3",
                   region_name='us-east-2',
-                  aws_access_key_id='AKIAZROUJCN5R7Q4423K',
-                  aws_secret_access_key='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')
+                  aws_access_key_id='xxxxxxxxxxx',
+                  aws_secret_access_key='xxxxxxxxxxxxxx')
 
 
 class DatetimeEncoder(json.JSONEncoder):
