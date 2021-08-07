@@ -10,6 +10,8 @@ In this application three tasks are implemented as following:
 2) POST /picus/put: This endpoint saves given JSON data to the S3 bucket and returns the S3 object key.
 3) GET /picus/get/{key}: This endpoint returns content of given key from S3.
 
+To send requests POSTMAN is used below.
+
 Task1: Retrieve all objects.
 http://18.218.215.12:5000/picus/list
 
