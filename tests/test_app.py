@@ -3,6 +3,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import pytest
 import boto3
 
+
 s3 = boto3.client("s3",
                   region_name='us-east-2',
                   aws_access_key_id='AKIAZROUJCN5R7Q4423K',
