@@ -78,6 +78,9 @@ class requestHandler(BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(test_read_obj(key).encode('utf-8'))
         except Exception as inst:
+            self.send_response(400, 'Bad Request: object does not exist')
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
             print(type(inst))  # the exception instance
             print(inst.args)  # arguments stored in .args
             print(inst)
@@ -91,6 +94,9 @@ class requestHandler(BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(test_send_JSON(content).encode('utf-8'))
         except Exception as inst:
+            self.send_response(400, 'Bad Request: wrong post request')
+            self.send_header('Content-Type', 'application/json')
+            self.end_headers()
             print(type(inst))  # the exception instance
             print(inst.args)  # arguments stored in .args
             print(inst)

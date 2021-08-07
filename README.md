@@ -11,16 +11,19 @@ In this application three tasks are implemented as following:
 3) GET /picus/get/{key}: This endpoint returns content of given key from S3.
 
 Task1: Retrieve all objects.
+http://18.218.215.12:5000/picus/list
 
 ![alt text](https://github.com/ftasbasi/Simple-HTTP-Server-with-AWS-S3/blob/main/img/task1.png?raw=true)
 
 
 Task2: Save given JSON data to the S3 bucket and return the S3 object key ("furkan.txt").
+http://18.218.215.12:5000/picus/put
 
 ![alt text](https://github.com/ftasbasi/Simple-HTTP-Server-with-AWS-S3/blob/main/img/task2.png?raw=true)
 
 
 Task3: Get content of key "sample1.txt" from S3.
+http://18.218.215.12:5000/picus/list/sample1.txt
 
 ![alt text](https://github.com/ftasbasi/Simple-HTTP-Server-with-AWS-S3/blob/main/img/task3.png?raw=true)
 
