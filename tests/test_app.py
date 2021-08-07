@@ -1,5 +1,6 @@
 import json
 from http.server import HTTPServer, BaseHTTPRequestHandler
+import pytest
 import boto3
 
 s3 = boto3.client("s3",
@@ -21,7 +22,7 @@ class DatetimeEncoder(json.JSONEncoder):
         print(inst)
 
 
-def list_all_objects():
+def test_list_all_objects():
     try:
         return s3.list_objects(Bucket='picusfurkan')
     except Exception as inst:
@@ -29,8 +30,8 @@ def list_all_objects():
         print(inst.args)  # arguments stored in .args
         print(inst)
 
-
-def send_JSON(body_dict):
+@pytest.fixture
+def test_send_JSON(body_dict):
     try:
         new_key = list(body_dict.keys())[0]
         s3.put_object(
@@ -46,7 +47,8 @@ def send_JSON(body_dict):
         print(inst)
 
 
-def read_obj(key):
+@pytest.fixture
+def test_read_obj(key):
     try:
         obj = s3.get_object(
             Bucket='picusfurkan',
@@ -59,7 +61,7 @@ def read_obj(key):
         print(inst)
 
 
-class requestHandler(BaseHTTPRequestHandler):
+class TestrequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
             if self.path.endswith('/picus/list'):
@@ -73,7 +75,7 @@ class requestHandler(BaseHTTPRequestHandler):
                 self.send_response(202)
                 self.send_header('Content-Type', 'text/html')
                 self.end_headers()
-                self.wfile.write(read_obj(key).encode('utf-8'))
+                self.wfile.write(test_read_obj(key).encode('utf-8'))
         except Exception as inst:
             print(type(inst))  # the exception instance
             print(inst.args)  # arguments stored in .args
@@ -86,7 +88,7 @@ class requestHandler(BaseHTTPRequestHandler):
                 self.send_response(202)
                 self.send_header("Content-type", "text/html")
                 self.end_headers()
-                self.wfile.write(send_JSON(content).encode('utf-8'))
+                self.wfile.write(test_send_JSON(content).encode('utf-8'))
         except Exception as inst:
             print(type(inst))  # the exception instance
             print(inst.args)  # arguments stored in .args
@@ -96,7 +98,7 @@ class requestHandler(BaseHTTPRequestHandler):
 def main():
     PORT = 5000
     server_address = ("0.0.0.0", PORT)
-    server = HTTPServer(server_address, requestHandler)
+    server = HTTPServer(server_address, TestrequestHandler)
     server.allow_reuse_address = True
     print("RUNNING...")
     try:
