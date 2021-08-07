@@ -100,7 +100,7 @@ def main():
     server_address = ("0.0.0.0", PORT)
     server = HTTPServer(server_address, TestrequestHandler)
     server.allow_reuse_address = True
-    print("RUNNING...")
+    print("RUNNING..")
     try:
         server.serve_forever()
     except Exception as inst:
