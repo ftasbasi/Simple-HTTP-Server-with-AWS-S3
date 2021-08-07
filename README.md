@@ -1,5 +1,24 @@
 # A simple application containing following HTTP endpoints. Using AWS S3 for storage.
 
-- GET /picus/list: This endpoint will return objects on the S3 bucket created in step #2.
-- POST /picus/put: This endpoint will save given JSON data to the S3 bucket and returns the S3 object key.
-- GET /picus/get/{key}: This endpoint will return content of given key from S3.
+Technologies : Amazon S3, ECS, ECR, Fargate, Docker
+
+In this application three tasks are implemented as following:
+
+1) GET /picus/list: This endpoint returns objects on the S3 bucket.
+2) POST /picus/put: This endpoint saves given JSON data to the S3 bucket and returns the S3 object key.
+3) GET /picus/get/{key}: This endpoint returns content of given key from S3.
+
+Task1: Retrieve all objects.
+
+![alt text](https://github.com/ftasbasi/Object-Oriented-Programming/blob/main/Industry%204.0/line2.png?raw=true)
+
+
+Task2: Save given JSON data to the S3 bucket and returns the S3 object key ("furkan.txt").
+
+![alt text](https://github.com/ftasbasi/Object-Oriented-Programming/blob/main/Industry%204.0/line2.png?raw=true)
+
+
+Task3: Get content of key "sample1.txt" from S3.
+
+![alt text](https://github.com/ftasbasi/Object-Oriented-Programming/blob/main/Industry%204.0/line2.png?raw=true)
+
