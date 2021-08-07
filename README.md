@@ -2,6 +2,8 @@
 
 Technologies : Amazon S3, ECS, ECR, Fargate, Docker
 
+It is a HTTP Server Application using AWS S3 as a storage service. Dockerization is placed in ECR.
+
 In this application three tasks are implemented as following:
 
 1) GET /picus/list: This endpoint returns objects on the S3 bucket.
