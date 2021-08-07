@@ -10,15 +10,15 @@ In this application three tasks are implemented as following:
 
 Task1: Retrieve all objects.
 
-![alt text](https://github.com/ftasbasi/Object-Oriented-Programming/blob/main/Industry%204.0/line2.png?raw=true)
+![alt text](https://github.com/ftasbasi/Simple-HTTP-Server-with-AWS-S3/blob/main/img/task1.png?raw=true
 
 
 Task2: Save given JSON data to the S3 bucket and returns the S3 object key ("furkan.txt").
 
-![alt text](https://github.com/ftasbasi/Object-Oriented-Programming/blob/main/Industry%204.0/line2.png?raw=true)
+![alt text](https://github.com/ftasbasi/Simple-HTTP-Server-with-AWS-S3/blob/main/img/task2.png?raw=true
 
 
 Task3: Get content of key "sample1.txt" from S3.
 
-![alt text](https://github.com/ftasbasi/Object-Oriented-Programming/blob/main/Industry%204.0/line2.png?raw=true)
+![alt text](https://github.com/ftasbasi/Simple-HTTP-Server-with-AWS-S3/blob/main/img/task3.png?raw=true)
 
