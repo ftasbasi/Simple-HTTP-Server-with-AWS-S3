@@ -61,7 +61,7 @@ def test_read_obj(key):
         print(inst)
 
 
-class TestrequestHandler(BaseHTTPRequestHandler):
+class requestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
             if self.path.endswith('/picus/list'):
@@ -98,7 +98,7 @@ class TestrequestHandler(BaseHTTPRequestHandler):
 def main():
     PORT = 5000
     server_address = ("0.0.0.0", PORT)
-    server = HTTPServer(server_address, TestrequestHandler)
+    server = HTTPServer(server_address, requestHandler)
     server.allow_reuse_address = True
     print("RUNNING..")
     try:
