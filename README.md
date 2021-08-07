@@ -1,4 +1,4 @@
-# A simple application containing following HTTP endpoints. Using AWS S3 for storage.
+# A simple http server with Docker and AWS Services
 
 Technologies : Amazon S3, ECS, ECR, Fargate, Docker
 
