@@ -4,8 +4,8 @@ import boto3
 
 s3 = boto3.client("s3",
                   region_name='us-east-2',
-                  aws_access_key_id='AKIAZROUJCN5R7Q4423K',
-                  aws_secret_access_key='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')
+                  aws_access_key_id='XXXXXXXXXXX',
+                  aws_secret_access_key='XXXXXXXXXXXXXXXXXXXXx')
 
 
 class DatetimeEncoder(json.JSONEncoder):
@@ -75,9 +75,6 @@ class requestHandler(BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(read_obj(key).encode('utf-8'))
         except Exception as inst:
-            self.send_response(400, 'Bad Request: object does not exist')
-            self.send_header('Content-Type', 'application/json')
-            self.end_headers()
             print(type(inst))  # the exception instance
             print(inst.args)  # arguments stored in .args
             print(inst)
@@ -91,9 +88,6 @@ class requestHandler(BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(send_JSON(content).encode('utf-8'))
         except Exception as inst:
-            self.send_response(400, 'Bad Request: wrong post request')
-            self.send_header('Content-Type', 'application/json')
-            self.end_headers()
             print(type(inst))  # the exception instance
             print(inst.args)  # arguments stored in .args
             print(inst)
