@@ -1,4 +1,4 @@
-# A simple http server with Docker and AWS Services
+# A simple HTTP Server with Docker and AWS Services
 
 Technologies : Amazon S3, ECS, ECR, Fargate, Docker
 
