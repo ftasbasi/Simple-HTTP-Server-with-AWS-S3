@@ -1,3 +1,5 @@
+[![Python application](https://github.com/ftasbasi/Simple-HTTP-Server-with-AWS-S3/actions/workflows/python-app.yml/badge.svg)](https://github.com/ftasbasi/Simple-HTTP-Server-with-AWS-S3/actions/workflows/python-app.yml)
+
 # A simple HTTP Server with Docker and AWS Services
 
 Technologies : Amazon S3, ECS, ECR, Fargate, Docker
