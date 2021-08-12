@@ -31,3 +31,4 @@ http://3.139.78.169:5000/picus/list/sample1.txt
 
 ![alt text](https://github.com/ftasbasi/Simple-HTTP-Server-with-AWS-S3/blob/main/img/task3.png?raw=true)
 
+AWS Services are now closed.
